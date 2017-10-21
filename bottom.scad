@@ -28,7 +28,7 @@ module Bottom () {
 	// walls
 	difference () {
 		linear_extrude(height=WallThickness+WallClearance
-				+BottomHeaderHeight+pcbt+TopHeaderHeight-2.5)
+				+BottomHeaderHeight+pcbt+TopHeaderHeight-flangeHeight)
 			difference() {
 				offset(delta=WallClearance+WallThickness) pcb();
 				offset(delta=WallClearance) pcb();
@@ -40,7 +40,7 @@ module Bottom () {
 	}
 	// flange
 	translate([0, 0, WallThickness+WallClearance
-			+BottomHeaderHeight+pcbt+TopHeaderHeight-2.5]) {
+			+BottomHeaderHeight+pcbt+TopHeaderHeight-flangeHeight]) {
 		linear_extrude(height=flangeHeight)
 			difference() {
 				offset(delta=WallClearance+flangeW) pcb();

@@ -16,9 +16,10 @@ LooseFit = 0.25;
 
 flangeHeight = 2;
 flangeW = 1.2;
+outerFlangeW = 0.8;
 
 snapH = 0.5;
-snapD = 0.8;
+snapD = 0.4;
 
 $fs=1;
 
