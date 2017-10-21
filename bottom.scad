@@ -20,8 +20,8 @@ module snap() {
 
 module Bottom () {
 	// floor
-	linear_extrude(height=WallThickness)
-		offset(delta=WallClearance+WallThickness) pcb();
+	hull() fourwaymirror() translate([pcbw/2-3, pcbl/2-3, 0])
+		cylinder(h=WallThickness, r1=3+WallClearance+WallThickness-WallThickness, r2=3+WallClearance+WallThickness);
 
 	fourwaymirror() translate([0, 0, WallThickness]) standoff();
 
