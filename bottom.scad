@@ -21,13 +21,13 @@ module snap() {
 module Bottom () {
 	// floor
 	linear_extrude(height=WallThickness)
-		offset(delta=WallClearance) pcb();
+		offset(delta=WallClearance+WallThickness) pcb();
 
 	fourwaymirror() translate([0, 0, WallThickness]) standoff();
 
 	// walls
-	difference () {
-		linear_extrude(height=WallThickness+WallClearance
+	translate([0, 0, WallThickness]) difference () {
+		linear_extrude(height=WallClearance
 				+BottomHeaderHeight+pcbt+TopHeaderHeight-flangeHeight)
 			difference() {
 				offset(delta=WallClearance+WallThickness) pcb();
