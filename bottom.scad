@@ -35,7 +35,7 @@ module Bottom () {
 			}
 
 		// usb cutout
-		translate([0, -(pcbl/2+WallThickness+WallClearance), WallThickness+BottomHeaderHeight+WallClearance+pcbt]) linear_extrude(height=2.8)
+		translate([0, -(pcbl/2+WallThickness+WallClearance), BottomHeaderHeight+WallClearance+pcbt]) linear_extrude(height=2.8)
 			translate([-4, 0, 0]) square([8, WallThickness]);
 	}
 	// flange
