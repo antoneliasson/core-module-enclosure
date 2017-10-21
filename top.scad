@@ -24,8 +24,8 @@ module buttonGuide() {
 module Top() {
 	// floor (roof when flipped)
 	difference() {
-		linear_extrude(height=WallThickness)
-			offset(delta=WallClearance+WallThickness) pcb();
+		hull() fourwaymirror() translate([pcbw/2-3, pcbl/2-3, 0])
+		cylinder(h=WallThickness, r1=3+WallClearance+WallThickness-WallThickness, r2=3+WallClearance+WallThickness);
 		mirrorYZ() translate([2+PCBButtonW/2, 8+PCBButtonW/2, 0])
 			linear_extrude(height=WallThickness)
 				offset(delta=LooseFit) rsquare4(buttonW, buttonR);
