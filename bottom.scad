@@ -49,9 +49,9 @@ module Bottom () {
 		// snaps
 		fourwaymirror() {
 			translate([0, 0, flangeHeight]) snap();
-			translate([0, 0, flangeHeight-snapH]) snap();
+			// Add an epsilon distance here to prevent the model from becoming non-manifold
+			translate([0, 0, flangeHeight-snapH-epsilon]) snap();
 		}
-
 	}
 }
 

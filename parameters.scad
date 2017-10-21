@@ -28,6 +28,8 @@ PCBButtonH = 5;
 buttonFlange = 1; // W & H
 buttonR = 1;
 
+epsilon = 0.001;
+
 $fs=1;
 
 module pcb() {
