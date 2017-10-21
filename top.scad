@@ -9,8 +9,8 @@ module standoff() {
 }
 
 module snap() {
-	translate([pcbw/2+WallClearance+WallThickness-outerFlangeW, 16-4, -2*snapH])
-		rotate([90, 0, 180]) linear_extrude(height=4) triangle(snapD, snapH);
+	translate([pcbw/2+WallClearance+WallThickness-outerFlangeW, 16-8, -2*snapH])
+		rotate([90, 0, 180]) linear_extrude(height=8) triangle(snapD, snapH);
 }
 
 module buttonGuide() {
