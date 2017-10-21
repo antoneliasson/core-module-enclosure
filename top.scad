@@ -25,7 +25,7 @@ module Top() {
 	// floor (roof when flipped)
 	difference() {
 		linear_extrude(height=WallThickness)
-			offset(delta=WallClearance) pcb();
+			offset(delta=WallClearance+WallThickness) pcb();
 		mirrorYZ() translate([2+PCBButtonW/2, 8+PCBButtonW/2, 0])
 			linear_extrude(height=WallThickness)
 				offset(delta=LooseFit) rsquare4(buttonW, buttonR);
@@ -33,7 +33,7 @@ module Top() {
 	fourwaymirror() translate([0, 0, WallThickness]) standoff();
 
 	// walls
-	linear_extrude(height=WallThickness+WallClearance)
+	translate([0, 0, WallThickness]) linear_extrude(height=WallClearance)
 		difference() {
 			offset(delta=WallClearance+WallThickness) pcb();
 			offset(delta=WallClearance) pcb();
