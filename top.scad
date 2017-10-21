@@ -13,12 +13,24 @@ module snap() {
 		rotate([90, 0, 180]) linear_extrude(height=4) triangle(snapD, snapH);
 }
 
+module buttonGuide() {
+	linextr(WallClearance+TopHeaderHeight-(buttonFlange+PCBButtonH))
+		difference() {
+			offset(delta=LooseFit+1.6) rsquare4(buttonW, buttonR);
+			offset(delta=LooseFit) rsquare4(buttonW, buttonR);
+		}
+}
+
 module Top() {
 	// floor (roof when flipped)
-	linear_extrude(height=WallThickness)
-		offset(delta=WallClearance) pcb();
-
-	#fourwaymirror() translate([0, 0, WallThickness]) standoff();
+	difference() {
+		linear_extrude(height=WallThickness)
+			offset(delta=WallClearance) pcb();
+		mirrorYZ() translate([2+PCBButtonW/2, 8+PCBButtonW/2, 0])
+			linear_extrude(height=WallThickness)
+				offset(delta=LooseFit) rsquare4(buttonW, buttonR);
+	}
+	fourwaymirror() translate([0, 0, WallThickness]) standoff();
 
 	// walls
 	linear_extrude(height=WallThickness+WallClearance)
@@ -39,6 +51,9 @@ module Top() {
 			translate([0, 0, flangeHeight]) snap();
 		}
 	}
+
+	mirrorYZ() translate([2+PCBButtonW/2, 8+PCBButtonW/2, WallThickness])
+		buttonGuide();
 
 }
 

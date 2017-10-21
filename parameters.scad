@@ -21,6 +21,13 @@ outerFlangeW = 0.8;
 snapH = 0.5;
 snapD = 0.4;
 
+buttonW = 6; // TODO merge?
+PCBButtonW = 6;
+PCBButtonH = 5;
+
+buttonFlange = 1; // W & H
+buttonR = 1;
+
 $fs=1;
 
 module pcb() {
