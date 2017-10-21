@@ -34,9 +34,9 @@ module Bottom () {
 				offset(delta=WallClearance) pcb();
 			}
 
-			// usb cutout
-			translate([0, -(pcbl/2+WallThickness+WallClearance), WallThickness+BottomHeaderHeight+WallClearance+pcbt]) linear_extrude(height=2.8)
-				translate([-4, 0, 0]) square([8, WallThickness]);
+		// usb cutout
+		translate([0, -(pcbl/2+WallThickness+WallClearance), WallThickness+BottomHeaderHeight+WallClearance+pcbt]) linear_extrude(height=2.8)
+			translate([-4, 0, 0]) square([8, WallThickness]);
 	}
 	// flange
 	translate([0, 0, WallThickness+WallClearance
