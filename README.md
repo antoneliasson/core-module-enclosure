@@ -20,7 +20,7 @@ With the exception of core-module.stl, which is derived from a model that was cr
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-along with this program. If not, see <http://www.gnu.org/licenses/>.
+    along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 
 Errata
@@ -31,3 +31,5 @@ Errata
 * Next time, separate WallThickness and FloorThickness even if they are the
   same. Should make the code more readable by being more clear what is being
   referred to.
+* Make the snaps wider
+* Simplify snaps
